@@ -14,7 +14,7 @@ app.add_middleware(
 )
 
 DB_CONFIG = {
-    "host": "123.136.28.129",
+    "host": "127.0.0.1",
     "user": "remote_user",
     "password": "",
     "database": "stock_market_db",
