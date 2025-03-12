@@ -32,6 +32,10 @@ class StockData(BaseModel):
     open: float
     close: float
     volume: int
+@app.get("/")
+def home():
+    return {"message": "FastAPI Backend is Running!"}
+
 
 @app.get("/data")
 def get_data(page: int = Query(1, alias="page"), limit: int = Query(50, alias="limit"), trade_code: str = Query(None, alias="trade_code")):
