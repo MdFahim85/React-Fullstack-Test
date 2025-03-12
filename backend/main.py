@@ -14,10 +14,11 @@ app.add_middleware(
 )
 
 DB_CONFIG = {
-    "host": "localhost",
-    "user": "root",
+    "host": "123.136.28.129",
+    "user": "remote_user",
     "password": "",
     "database": "stock_market_db",
+    "port": 3306
 }
 
 def get_db_connection():
