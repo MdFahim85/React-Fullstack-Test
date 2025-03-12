@@ -36,13 +36,13 @@ function App() {
   }, [tradeCode, page]);
 
   const fetchTradeCodes = () => {
-    fetch("http://127.0.0.1:8000/trade_codes")
+    fetch("https://react-fullstack-test.onrender.com/trade_codes")
       .then((response) => response.json())
       .then(({ trade_codes }) => setTradeCodes(trade_codes));
   };
 
   const fetchData = () => {
-    const url = `http://127.0.0.1:8000/data?page=${page}&limit=${itemsPerPage}`;
+    const url = `https://react-fullstack-test.onrender.com/data?page=${page}&limit=${itemsPerPage}`;
     fetch(url)
       .then((response) => response.json())
       .then(({ total, data }) => {
@@ -52,7 +52,7 @@ function App() {
   };
 
   const fetchChartData = () => {
-    const url = `http://127.0.0.1:8000/data?trade_code=${tradeCode}`;
+    const url = `https://react-fullstack-test.onrender.com/data?trade_code=${tradeCode}`;
     fetch(url)
       .then((response) => response.json())
       .then(({ total, data }) => {
@@ -76,7 +76,7 @@ function App() {
   };
 
   const handleSave = () => {
-    fetch("http://127.0.0.1:8000/update", {
+    fetch("https://react-fullstack-test.onrender.com/update", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(editStock),
@@ -90,7 +90,7 @@ function App() {
   };
 
   const handleDelete = (stock) => {
-    fetch("http://127.0.0.1:8000/delete", {
+    fetch("https://react-fullstack-test.onrender.com/delete", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(stock),
@@ -118,7 +118,7 @@ function App() {
   };
 
   const handleAdd = () => {
-    fetch("http://127.0.0.1:8000/add", {
+    fetch("https://react-fullstack-test.onrender.com/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newStock),
